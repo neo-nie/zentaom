@@ -191,19 +191,19 @@ height: 100%;
 @-webkit-keyframes slideRightIn {
 
 from { -webkit-transform: translateX(100%); } to { -webkit-transform: translateX(0); 
-}
+}}
 @-webkit-keyframes slideLeftIn {
 
 from { -webkit-transform: translateX(-100%); } to { -webkit-transform: translateX(0); 
-}
+}}
 @-webkit-keyframes slideLeftOut {
 
 from { -webkit-transform: translateX(0); } to { -webkit-transform: translateX(-100%); 
-}
+}}
 @-webkit-keyframes slideRightOut {
 
 from { -webkit-transform: translateX(0); } to { -webkit-transform: translateX(100%); 
-}
+}}
 
 
 /*
