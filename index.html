@@ -132,7 +132,6 @@
 <script type='text/javascript' src='src/zepto.js'></script>
 <script type='text/javascript' src='src/jqtouch.js'></script>
 <script type='text/javascript' src='src/jqt.autotitles.js'></script>
-<script type='text/javascript' src='src/fullscreen.js'></script>
 <script type='text/javascript' src='src/yql.js'></script>
 
 <link rel="stylesheet" href="src/add2home.css">
@@ -160,8 +159,8 @@
 if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i))) {
     var jQT = new $.jQTouch({
         //cacheGetRequests: false,
-        icon: 'img/iTab-glossy.png',
-        icon4: 'img/iTab-glossy.png',
+        icon: 'img/zaodao-logo24.png',
+        icon4: 'img/zaodao-logo24.png',
         addGlossToIcon: false,
         startupScreen: 'img/istartup.png',
         themeSelectionSelector: '#jqt #themes ul',
@@ -169,7 +168,7 @@ if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i
         statusBar: 'default',
         preloadImages: [
             'img/loading.gif',
-            'img/iTab-glossy.png',
+            'img/zaodao-logo24.png',
             'img/pinstripes2.gif',
             'img/UIBack.png',
             'img/UIBackPressed.png',
@@ -183,7 +182,7 @@ if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i
         statusBar: 'default',
         preloadImages: [
             'img/loading.gif',
-            'img/iTab-glossy.png',
+            'img/zaodao-logo24.png',
             'img/pinstripes2.gif',
             'img/UIBack.png',
             'img/UIBackPressed.png',
@@ -275,27 +274,6 @@ $(function () {
             }
 
         }
-    }); //pageAnimationEnd
-
-//#flickrlist
-    $('#flickrlist').bind('pageAnimationEnd', function (e, info) {
-        if (info.direction == 'in') {
-            var mydata = '';
-            $("#flickrappend").empty();
-            $("#flickr .toolbar H1").empty(); // Empty H1 header for autotitle
-            if (myScroll) {
-                myScroll.destroy();
-                myScroll = null;
-                //alert('destroy iscroll')
-            }
-
-            if ($('div#' + e.target.id + ' #wrapper').get(0)) {
-                setTimeout(function () {
-                    myScroll = new iScroll($('div#' + e.target.id + ' #wrapper').get(0));
-                }, 0);
-            }
-        }
-
     }); //pageAnimationEnd
 
 // RSS Feed
@@ -400,46 +378,6 @@ $(function () {
         } //direction in end
     }); //pageAnimationEnd
 
-
-// flickr
-    $('#flickr').bind('pageAnimationEnd', function (e, info) {
-
-        if (info.direction == 'in') {
-
-            showLoading();
-
-            $.getJSON('http://api.flickr.com/services/feeds/photos_public.gne?id=' + mydata + '&lang=en-us&format=json&jsoncallback=?', function (data) {
-
-                if (myScroll) {
-                    myScroll.destroy();
-                    myScroll = null;
-                    //alert('destroy iscroll')
-                }
-
-                if ($('div#' + e.target.id + ' #wrapper').get(0)) {
-                    setTimeout(function () {
-                        myScroll = new iScroll($('div#' + e.target.id + ' #wrapper').get(0));
-                        //alert('New iscroll');
-                    }, 0);
-                }
-
-                content = '<ul class="edgecontent">';
-
-                $.each(data.items, function (i) {
-
-                    content += '<li><h1>' + this.title + '</h1>';
-                    content += '<p>' + this.description + '</p>';
-                    content += '</li>';
-                });//each
-                content += '</ul>';
-                $('#flickrappend').append(content);
-
-                hideLoading();
-
-            }); // getjson
-        } //direction in end
-    }); //pageAnimationEnd
-
 }); //end all function()
 </script>
 
@@ -464,7 +402,7 @@ $(function () {
 <!-- #home 动态列表-->
 <div id="home" class="current">
     <div class="toolbar">
-        <h1>动态</h1>
+        <h1>主页</h1>
 
         <div onClick="moveDown();" class="button slideup" id="infoButton">搜索</div>
     </div>
@@ -472,31 +410,30 @@ $(function () {
     <div id="wrapper">
         <div id="scroller">
             <ul class="rounded">
-                <li class="arrow"><a href="#storylist">RSS Feed with YQL
+                <li class="arrow"><a href="#storylist">我的需求
                     <small class="counter">5</small>
                 </a></li>
-                <li class="arrow"><a href="#tasklist">Twitter Users list
+                <li class="arrow"><a href="#tasklist">我的任务
                     <small class="counter">7</small>
                 </a></li>
-                <li class="arrow"><a href="#buglist">Flickr Photos
+                <li class="arrow"><a href="#buglist">我的缺陷
                     <small class="counter">10</small>
                 </a></li>
             </ul>
-            <h2>External Links</h2>
+            <h2>外部链接</h2>
             <ul class="rounded">
-                <li class="forward"><a target="_blank" href="http://www.itabbar.com/">Homepage</a></li>
+                <li class="forward"><a target="_blank" href="http://www.zentao.net/">禅道官方网站</a></li>
                 <li class="forward"><a target="_blank" href="http://www.twitter.com/itabbar">Twitter</a></li>
-                <li class="forward"><a target="_blank" href="http://www.box.com/s/3gfhlold7ojbu3ll399s">Download</a>
-                </li>
+                <li class="forward"><a target="_blank" href="http://www.box.com/s/3gfhlold7ojbu3ll399s">Download</a></li>
             </ul>
             <ul class="individual">
                 <li>
                     <a href="mailto:&#105;&#110;&#102;&#111;&#115;&#064;&#105;&#116;&#097;&#098;&#098;&#097;&#114;&#046;&#099;&#111;&#109;">email</a>
                 </li>
-                <li><a target="_blank" href="#">Donate</a></li>
+                <li><a href="#about">关于</a></li>
             </ul>
             <div class="info">
-                <p>Add this page to your home screen to view the custom icon, startup screen, and full screen mode.</p>
+                <p>禅道移动版 by Leon</p>
             </div>
         </div>
     </div>
@@ -621,20 +558,20 @@ $(function () {
     <div id="wrapper">
         <div id="scroller">
             <ul class="edgetoedge">
-                <li class="list arrow"><a onClick="send('52522100@N07')"  href="#flickr" class="">Techcrunch</a>
+                <li class="list arrow"><a onClick="send('52522100@N07')"  href="#bug" class="">Techcrunch</a>
                 </li>
-                <li class="list arrow"><a onClick="send('11629624@N02')"  href="#flickr" class="">ginocote</a></li>
-                <li class="list arrow"><a onClick="send('57057611@N02')"  href="#flickr" class="">ric6000</a></li>
+                <li class="list arrow"><a onClick="send('11629624@N02')"  href="#bug" class="">ginocote</a></li>
+                <li class="list arrow"><a onClick="send('57057611@N02')"  href="#bug" class="">ric6000</a></li>
             </ul>
         </div>
     </div>
 </div>
-<!-- End #flickrlist 缺陷列表 -->
+<!-- End #buglist 缺陷列表 -->
 
 <!-- #bug 单条缺陷 -->
 <div id="bug">
     <div class="toolbar">
-        <h1>Techcrunch RSS</h1>
+        <h1></h1>
         <a class="back" href="#">Back</a></div>
     <div id="wrapper">
         <div id="scroller">
@@ -643,19 +580,6 @@ $(function () {
     </div>
 </div>
 <!-- End #bug 单条缺陷 -->
-
-<!-- #flickr -->
-<div id="flickr">
-    <div class="toolbar">
-        <h1>Flickr Photos</h1>
-        <a class="back" href="#">Back</a></div>
-    <div id="wrapper">
-        <div id="scroller">
-            <div id="flickrappend"></div>
-        </div>
-    </div>
-</div>
-<!-- End #flickr -->
 
 <!-- #search -->
 <form id="search" class="form">
@@ -675,7 +599,7 @@ $(function () {
 <form id="search1" action="ajax_get.php" method="GET" class="form">
     <div class="toolbar">
         <h1>Search</h1>
-        <a class="cancel" href="#">Cancel</a></div>
+        <a class="cancel" href="#">取消</a></div>
     <div class="scroll">
         <ul class="rounded">
             <li><input type="text" name="s" value="" placeholder="Search"/></li>
@@ -685,9 +609,9 @@ $(function () {
 </form>
 <!-- End #search ori-->
 
-<!-- #about -->
-<div id="about" class="selectable">
-    <p><img src="/img/iTab-glossy.png"/></p>
+<!-- #about 关于 -->
+<div id="about">
+    <p><img src="img/zaodao-logo.png"/></p>
 
     <p><strong>禅道移动版</strong><br>v1.0 beta<br>
         <a href="http://www.itabbar.com">By LEON</a></p>
@@ -708,7 +632,7 @@ $(function () {
 <nav id="tabbar">
     <ul>
         <!-- Action & navigation -->
-        <li><a href="#home" class="current flip"><strong>动态</strong>
+        <li><a href="#home" class="current flip"><strong>主页</strong>
 
             <div class="home"></div>
         </a></li>
@@ -835,6 +759,7 @@ $(function () {
 </script>
 
 <script type='text/javascript' src='src/itabbar.js'></script>
+<script type='text/javascript' src='src/fullscreen.js'></script>
 
 </body>
 </html>
