@@ -1,10 +1,8 @@
 div#jqt #about {
 	padding: 50px 0px 40px;
 	text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 0;
-	 color: #999;
 	font-size: 13px;
 	text-align: center;
- 	background: #161618;
 }
 div#jqt #about p {
 	margin-bottom: 8px;

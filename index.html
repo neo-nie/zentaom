@@ -399,26 +399,21 @@ $(function () {
 
 <div id="jqt">
 
-<!-- #home 动态列表-->
+<!-- #home 主页-->
 <div id="home" class="current">
     <div class="toolbar">
         <h1>主页</h1>
 
-        <div onClick="moveDown();" class="button slideup" id="infoButton">搜索</div>
+        <div onClick="moveDown();" class="button slideup" id="infoButton"><img src="img/search.png" width="16" height="16" style=" margin-top:6px" /></div>
     </div>
 
     <div id="wrapper">
         <div id="scroller">
             <ul class="rounded">
-                <li class="arrow"><a href="#storylist">我的需求
-                    <small class="counter">5</small>
-                </a></li>
-                <li class="arrow"><a href="#tasklist">我的任务
-                    <small class="counter">7</small>
-                </a></li>
-                <li class="arrow"><a href="#buglist">我的缺陷
-                    <small class="counter">10</small>
-                </a></li>
+                <li class="arrow"><a href="#storylist">我的需求<small class="counter">5</small></a></li>
+                <li class="arrow"><a href="#tasklist">我的任务<small class="counter">7</small></a></li>
+                <li class="arrow"><a href="#buglist">我的缺陷<small class="counter">10</small></a></li>
+                <li class="arrow"><a href="#buglist">最新动态<small class="counter">10</small></a></li>
             </ul>
             <h2>外部链接</h2>
             <ul class="rounded">
@@ -438,22 +433,7 @@ $(function () {
         </div>
     </div>
 </div>
-<!-- End #home 动态列表-->
-
-<!-- #action 单条动态 -->
-<div id="action" class="">
-    <div class="toolbar">
-        <h1>item section</h1>
-        <a class="back" href="#">后退</a></div>
-    <div id="wrapper">
-        <div id="scroller">
-            <ul class="rounded_content">
-                <li id="actionappend">单条动态</li>
-            </ul>
-        </div>
-    </div>
-</div>
-<!-- End #action 单条动态 -->
+<!-- End #home 主页-->
 
 <!-- #storylist 需求列表 -->
 <div id="storylist">
@@ -581,6 +561,39 @@ $(function () {
 </div>
 <!-- End #bug 单条缺陷 -->
 
+<!-- #actionlist 动态列表 -->
+<div id="actionlist">
+    <div class="toolbar">
+        <h1>缺陷</h1>
+    </div>
+    <div id="wrapper">
+        <div id="scroller">
+            <ul class="edgetoedge">
+                <li class="list arrow"><a onClick="send('52522100@N07')"  href="#bug" class="">Techcrunch</a>
+                </li>
+                <li class="list arrow"><a onClick="send('11629624@N02')"  href="#bug" class="">ginocote</a></li>
+                <li class="list arrow"><a onClick="send('57057611@N02')"  href="#bug" class="">ric6000</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End #actionlist 动态列表 -->
+
+<!-- #action 单条动态 -->
+<div id="action" class="">
+    <div class="toolbar">
+        <h1>item section</h1>
+        <a class="back" href="#">后退</a></div>
+    <div id="wrapper">
+        <div id="scroller">
+            <ul class="rounded_content">
+                <li id="actionappend">单条动态</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End #action 单条动态 -->
+
 <!-- #search -->
 <form id="search" class="form">
     <div class="toolbar">
@@ -611,7 +624,7 @@ $(function () {
 
 <!-- #about 关于 -->
 <div id="about">
-    <p><img src="img/zaodao-logo.png"/></p>
+    <p><img src="img/zentao-logo.png"/></p>
 
     <p><strong>禅道移动版</strong><br>v1.0 beta<br>
         <a href="http://www.itabbar.com">By LEON</a></p>
@@ -621,7 +634,7 @@ $(function () {
     <p>
         <a target="_blank" href="http://twitter.com/itabbar">@iTabbar on Twitter</a></p>
 
-    <p><br><br><a href="#" class="grayButton goback">关闭</a></p>
+    <p><br><br><a href="#">关闭</a></p>
 </div>
 <!-- End #about -->
 </div>
@@ -632,29 +645,12 @@ $(function () {
 <nav id="tabbar">
     <ul>
         <!-- Action & navigation -->
-        <li><a href="#home" class="current flip"><strong>主页</strong>
-
-            <div class="home"></div>
-        </a></li>
-        <li><a href="#storylist" class="flip"><strong>需求</strong>
-
-            <div class="rss"></div>
-        </a></li>
-        <li><a href="#tasklist" class="flip"><strong>任务</strong>
-
-            <div class="twitter"></div>
-        </a></li>
-        <li><a href="#buglist" class="flip">
-            <small class="badge right">3</small>
-            <strong>缺陷</strong>
-
-            <div class="flickr"></div>
-        </a></li>
-        <li><a onClick="moveDown();" class="flip"><strong>搜索</strong>
-
-            <div class="search2"></div>
-        </a></li>
-
+        <li><a href="#home" class="current flip"><strong>主页</strong><div class="home"></div></a></li>
+        <li><a href="#storylist" class="flip"><strong>需求</strong><div class="story"></div></a></li>
+        <li><a href="#tasklist" class="flip"><strong>任务</strong><div class="task"></div></a></li>
+        <li><a href="#buglist" class="flip"><small class="badge right">3</small><strong>缺陷</strong><div class="bug"></div></a></li>
+        <li><a href="#actionlist" class="flip"><strong>动态</strong><div class="task"></div></a></li>
+        <li><a onClick="moveDown();" class="flip"><strong>搜索</strong><div class="search2"></div></a></li>
     </ul>
 </nav>
 </div>
