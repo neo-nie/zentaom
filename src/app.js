@@ -85,8 +85,9 @@ $(function () {
             console.log(c + ": " + b.status), c == "progress" && b.progress++
         }, !1)
     });
+
     //自动隐藏地址栏
-    var ua = navigator.userAgent.toLowerCase();
+    /*var ua = navigator.userAgent.toLowerCase();
     if (navigator.standalone === !1 && location.search != "?debug" && /iphone/.test(ua) && /safari/.test(ua) && !/mqqbrowser/.test(ua)) {
         function onOriChange() {
             var a = document.body.style, b = window.screen.availHeight, c = window.orientation;
@@ -96,5 +97,5 @@ $(function () {
         addEventListener("orientationchange", onOriChange, !1);
         addEventListener("scroll", function () {!pageYOffset && setTimeout(scrollTo, 2000, 0, 1)}, !1);
         onOriChange();
-    }
+    }*/
 });
