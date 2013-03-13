@@ -1,0 +1,68 @@
+CACHE MANIFEST
+# VERSION 1.0
+# 2013-03-13
+
+# 直接缓存的文件
+CACHE:
+index.html
+
+img\backButton.png
+img\iPhoneBackButton.png
+img\istartup-2.png
+img\istartup.png
+img\iTab-glossy.png
+img\jqtouch.png
+img\jqtouch4.png
+img\loading.gif
+img\loading2.gif
+img\logo72X72_flat.png
+img\logo72X72_glossy.png
+img\pinstripes.png
+img\pinstripes2.gif
+img\searchfield.png
+img\UIBack.png
+img\UIBackPressed.png
+
+src\app.js
+src\add2home.css
+src\add2home.js
+src\add2home.min.js
+src\apple-gc-full-modif-old.css
+src\apple-gc-old.css
+src\apple-gc-shit.css
+src\apple-gc.css
+src\apple-last.css
+src\apple-ori.css
+src\apple-today.css
+src\apple.css
+src\fullscreen-standalone.js
+src\fullscreen.js
+src\iscroll.js
+src\itabbar-15-mars.js
+src\itabbar-last.js
+src\itabbar-on-top.js
+src\itabbar-ori.js
+src\itabbar-test.js
+src\itabbar.css
+src\itabbar.js
+src\itabbar_ios6.css
+src\jqt.autotitles.min.js
+src\jqtouch.min.js
+src\style.css
+src\yql.js
+src\zepto.min.js
+
+# http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css
+# http://code.jquery.com/jquery-1.7.1.min.js
+# http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js
+
+
+# 需要在时间在线的文件
+NETWORK:
+# http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css
+# http://code.jquery.com/jquery-1.7.1.min.js
+# http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js
+# https://maps.googleapis.com/maps/api/js?sensor=false
+
+# 替代方案
+FALLBACK:
