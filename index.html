@@ -195,24 +195,20 @@ var mydata = '';
 
 // Main functions:
 $(function () {
-
-    $('#action').bind('pageAnimationEnd', function (e, info) {
-
-        if (info.direction == 'in') {
-//$("#postcat").empty();
-            if (myScroll) {
-                myScroll.destroy();
-                myScroll = null;
-                //alert('destroy iscroll')
-            }
-
-            if ($('div#' + e.target.id + ' #wrapper').get(0)) {
-                setTimeout(function () {
-                    myScroll = new iScroll($('div#' + e.target.id + ' #wrapper').get(0));
-                }, 0);
-            }
+    $('#home').bind('pageAnimationEnd', function (e, info) {
+        if (myScroll) {
+            myScroll.destroy();
+            myScroll = null;
+            //alert('destroy iscroll')
         }
 
+        if ($('div#' + e.target.id + ' #wrapper').get(0)) {
+            setTimeout(function () {
+                myScroll = new iScroll($('div#' + e.target.id + ' #wrapper').get(0));
+                //alert('New iscroll');
+            }, 0);
+        }
+        //alert('New iscroll');
     }); //pageAnimationEnd
 
 // RSS List
@@ -238,24 +234,8 @@ $(function () {
 
     }); //pageAnimationEnd
 
-    $('#home').bind('pageAnimationEnd', function (e, info) {
-        if (myScroll) {
-            myScroll.destroy();
-            myScroll = null;
-            //alert('destroy iscroll')
-        }
 
-        if ($('div#' + e.target.id + ' #wrapper').get(0)) {
-            setTimeout(function () {
-                myScroll = new iScroll($('div#' + e.target.id + ' #wrapper').get(0));
-                //alert('New iscroll');
-            }, 0);
-        }
-        //alert('New iscroll');
-    }); //pageAnimationEnd
-
-
-    $('#twitterlist').bind('pageAnimationEnd', function (e, info) {
+    $('#tasklist').bind('pageAnimationEnd', function (e, info) {
         if (info.direction == 'in') {
             var mydata = '';
             $("#taskappend").empty();
@@ -376,6 +356,25 @@ $(function () {
             }); // getjson
 
         } //direction in end
+    }); //pageAnimationEnd
+
+    $('#actionlist').bind('pageAnimationEnd', function (e, info) {
+
+        if (info.direction == 'in') {
+//$("#postcat").empty();
+            if (myScroll) {
+                myScroll.destroy();
+                myScroll = null;
+                //alert('destroy iscroll')
+            }
+
+            if ($('div#' + e.target.id + ' #wrapper').get(0)) {
+                setTimeout(function () {
+                    myScroll = new iScroll($('div#' + e.target.id + ' #wrapper').get(0));
+                }, 0);
+            }
+        }
+
     }); //pageAnimationEnd
 
 }); //end all function()
